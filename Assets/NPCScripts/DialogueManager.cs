@@ -41,9 +41,15 @@ public class DialogueManager : MonoBehaviour
 
         if (isAndOneDialogueVersion)
         {
+            StatsManager.Instance.globalMultiplier += 0.01f;
+            float randomScore = Random.Range(1f, 3f) * StatsManager.Instance.globalMultiplier;
+            StatsManager.Instance.globalScore += randomScore;
             ChooseBuffAndOne();
         } else
         {
+            StatsManager.Instance.globalMultiplier += 0.01f;
+            float randomScore = Random.Range(1f, 1f) * StatsManager.Instance.globalMultiplier;
+            StatsManager.Instance.globalScore += randomScore;
             ChooseBuff(); // player stat boost upon dialoguez
         }
 

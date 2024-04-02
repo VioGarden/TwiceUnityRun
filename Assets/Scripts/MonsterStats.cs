@@ -196,21 +196,33 @@ public class MonsterStats : MonoBehaviour
         {
             float pointsToAdd = 10 * StatsManager.Instance.globalMultiplier;
             StatsManager.Instance.globalScore += pointsToAdd;
+
+            float multiplierToAdd = 0.01f;
+            StatsManager.Instance.globalMultiplier += multiplierToAdd;
         }
         else if (monsterType == 1)
         {
             float pointsToAdd = 20 * StatsManager.Instance.globalMultiplier;
             StatsManager.Instance.globalScore += pointsToAdd;
+
+            float multiplierToAdd = 0.02f;
+            StatsManager.Instance.globalMultiplier += multiplierToAdd;
         }
         else if (monsterType == 3)
         {
             float pointsToAdd = 40 * StatsManager.Instance.globalMultiplier;
             StatsManager.Instance.globalScore += pointsToAdd;
+
+            float multiplierToAdd = 0.04f;
+            StatsManager.Instance.globalMultiplier += multiplierToAdd;
         }
         else if (monsterType == 4)
         {
             float pointsToAdd = 60 * StatsManager.Instance.globalMultiplier;
             StatsManager.Instance.globalScore += pointsToAdd;
+
+            float multiplierToAdd = 0.06f;
+            StatsManager.Instance.globalMultiplier += multiplierToAdd;
         }
         Destroy(gameObject);
     }

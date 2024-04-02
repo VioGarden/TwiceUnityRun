@@ -52,8 +52,6 @@ public class QuizManager : MonoBehaviour
 
     public void StartQuiz(Quiz quiz)
     {
-        //Debug.Log("test2");
-        //Debug.Log(currentQuizName);
         isQuizActive = true;
 
         isAndOneQuizVersion = quiz.isAndOne; // check is coupled npc
@@ -214,6 +212,11 @@ public class QuizManager : MonoBehaviour
 
     public void ChooseBuff()
     {
+        StatsManager.Instance.globalMultiplier += 0.01f;
+        float randomScore = Random.Range(1f, 3f) * StatsManager.Instance.globalMultiplier;
+        StatsManager.Instance.globalScore += randomScore;
+
+
         int randomNumber = Random.Range(1, 6);
 
         // Execute the corresponding function based on the selected number
@@ -276,9 +279,11 @@ public class QuizManager : MonoBehaviour
     {
         int randomNumber = Random.Range(1, 6);
 
-        //canSwitchToNormalNPCNow = true;
-
         andOneNPCReference.QuizSolved(currentQuizName);
+
+        StatsManager.Instance.globalMultiplier += 0.2f;
+        float randomScore = Random.Range(10f, 30f) * StatsManager.Instance.globalMultiplier;
+        StatsManager.Instance.globalScore += randomScore;
 
         // Execute the corresponding function based on the selected number
         switch (randomNumber)

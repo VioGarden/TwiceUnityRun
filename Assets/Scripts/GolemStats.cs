@@ -126,17 +126,21 @@ public class GolemStats : MonoBehaviour
     {
         this.golemHealth = 1000;
         this.golemMaxHealth = 1000;
-        this.golemAttackDamage = 5;
-        this.golemLodgeDamage = 10;
-        this.golemSpeed = 5;
+        int randomAttackDamageGolem = Random.Range(5, 40);
+        this.golemAttackDamage = randomAttackDamageGolem;
+        int randomLodgeDamageGolem = Random.Range(10, 50);
+        this.golemLodgeDamage = randomLodgeDamageGolem;
+        int randomSpeedGolem = Random.Range(5, 10);
+        this.golemSpeed = randomSpeedGolem;
         healthBar.UpdateHealthBar(1000, 1000);
     }
 
     private void Die()
     {
         Debug.Log("Golem Perished");
-        StatsManager.Instance.globalMultiplier += 0.2f;
-        StatsManager.Instance.globalScore += 100f;
+        float randomMultIncrease = Random.Range(3f, 5f);
+        StatsManager.Instance.globalMultiplier += randomMultIncrease;
+        StatsManager.Instance.globalScore += (100f * StatsManager.Instance.globalMultiplier);
         Destroy(gameObject);
     }
 

@@ -412,11 +412,25 @@ public class PlayerStats : MonoBehaviour
 
     public void InitVariables()
     {
+        this.camoTime = 20.00f;
+        //this.canCamo = true;
+        this.health = 300;
+        this.speed = 40;
+        this.attackDamage = 10;
+        this.knockBack = 1f;
+        this.isDead = false;
+        this.flareDuration = 1f;
+        //StatsManager.Instance.globalScore = 0;
+        //StatsManager.Instance.globalMultiplier = 1;
+    }
+
+    public void InitVariables0()
+    {
         this.camoTime = 10.00f;
         //this.canCamo = true;
         this.health = 30;
         this.speed = 40;
-        this.attackDamage = 1;
+        this.attackDamage = 3;
         this.knockBack = 1f;
         this.isDead = false;
         this.flareDuration = 1f;
