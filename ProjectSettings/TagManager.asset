@@ -50,6 +50,9 @@ TagManager:
   - name: WallHider
     uniqueID: 3766651435
     locked: 0
+  - name: Maps
+    uniqueID: 1100627213
+    locked: 0
   - name: Player
     uniqueID: 639617541
     locked: 0
