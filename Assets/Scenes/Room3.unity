@@ -534,7 +534,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Gustavo Fring
-        icon: {fileID: 21300000, guid: 0f3d1291bb0154e0a87f170a2b5f7417, type: 3}
+        icon: {fileID: 21300000, guid: 0a2a7e32bd1f86b4d96ee5d2e8fa6ab6, type: 3}
       line: HOOOOOOO
     isAndOne: 1
   dhsp: {fileID: 162426524}
