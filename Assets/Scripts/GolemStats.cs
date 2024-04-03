@@ -160,6 +160,7 @@ public class GolemStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Golem Perished");
+        StatsManager.Instance.monsterKillCount += 1;
         float randomMultIncrease = Random.Range(3f, 5f);
         StatsManager.Instance.globalMultiplier += randomMultIncrease;
         StatsManager.Instance.globalScore += (100f * StatsManager.Instance.globalMultiplier);

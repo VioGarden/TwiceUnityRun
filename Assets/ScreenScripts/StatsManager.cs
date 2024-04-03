@@ -25,6 +25,8 @@ public class StatsManager : MonoBehaviour
 
     public int globalWalnutCount;
 
+    public int monsterKillCount;
+
     private void Awake()
     {
         if (Instance != null)

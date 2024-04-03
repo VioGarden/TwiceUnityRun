@@ -1400,7 +1400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4401861202704221676, guid: f475adb5bf7c645e28ae0d5039856fa8, type: 3}
       propertyPath: orthographic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4401861202704221676, guid: f475adb5bf7c645e28ae0d5039856fa8, type: 3}
       propertyPath: field of view

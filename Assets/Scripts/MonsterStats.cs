@@ -192,6 +192,7 @@ public class MonsterStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Monster Perished");
+        StatsManager.Instance.monsterKillCount += 1;
         if (monsterType == 0)
         {
             float pointsToAdd = 10 * StatsManager.Instance.globalMultiplier;
