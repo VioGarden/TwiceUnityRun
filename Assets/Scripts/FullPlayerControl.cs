@@ -107,6 +107,7 @@ public class FullPlayerControl : MonoBehaviour
         statsPlayer.camoTime = statsPlayerCamo.camoTime;
         player.SetActive(true);
         playerCamo.SetActive(false);
+        statsPlayer.checkIfRed = true;
         isCurrentlyCamo = false;
     }
 }

@@ -243,31 +243,31 @@ public class QuizManager : MonoBehaviour
 
     private void IncreaseADRandom()
     {
-        int randomAD = Random.Range(1, 10);
+        int randomAD = Random.Range(10, 30);
         stats.IncreaseAD(randomAD);
     }
 
     private void IncreaseHealthRandom()
     {
-        int randomHealth = Random.Range(1, 50);
+        int randomHealth = Random.Range(100, 300);
         stats.Heal(randomHealth);
     }
 
     private void IncreaseSpeedRandom()
     {
-        int randomSpeed = Random.Range(1, 3);
+        int randomSpeed = Random.Range(7, 15);
         stats.IncreaseSpeed(randomSpeed);
     }
 
     private void IncreaseKnockBackRandom()
     {
-        float randomKO = Random.Range(0.1f, 0.5f);
+        float randomKO = Random.Range(2f, 5f);
         stats.IncreaseKnockBack(randomKO);
     }
 
     private void IncreaseCamoRandom()
     {
-        float randomCamo = Random.Range(0.5f, 30f);
+        float randomCamo = Random.Range(10f, 30f);
         stats.IncreaseCamo(randomCamo);
     }
 

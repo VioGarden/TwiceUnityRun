@@ -23,6 +23,8 @@ public class StatsManager : MonoBehaviour
     public float globalMultiplier;
     public float globalTimer;
 
+    public int globalWalnutCount;
+
     private void Awake()
     {
         if (Instance != null)

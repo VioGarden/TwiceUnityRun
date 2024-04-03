@@ -29,6 +29,19 @@ public class RetryGame : MonoBehaviour
         StatsManager.Instance.gameHasStarted = true;
         StatsManager.Instance.globalTimer = 180;
         StatsManager.Instance.globalScore = 0;
+        StatsManager.Instance.globalMultiplier = 1;
+        StatsManager.Instance.globalWalnutCount = 0;
         SceneManager.LoadScene("MainMap");
+
+        DoorManager.Instance.doorStates[0] = true;
+        DoorManager.Instance.doorStates[1] = true;
+        DoorManager.Instance.doorStates[2] = true;
+        DoorManager.Instance.doorStates[3] = true;
+
+        WalnutManager.Instance.walnutStates[0] = true;
+        WalnutManager.Instance.walnutStates[1] = true;
+        WalnutManager.Instance.walnutStates[2] = true;
+        WalnutManager.Instance.walnutStates[3] = true;
+        WalnutManager.Instance.walnutStates[4] = true;
     }
 }

@@ -31,6 +31,8 @@ public class PlayerStats : MonoBehaviour
 
     public float MIN_CAMO_TIMER = 0f;
 
+    public bool checkIfRed;
+
     // Variables to make player red when losing HP
     public Renderer playerRenderer;
     public Color damageColor = new Color(0.97f, 0.50f, 0.50f);
@@ -43,6 +45,8 @@ public class PlayerStats : MonoBehaviour
     public ScoreManager scoreManagerReferral;
 
     public MultiplierManager multiplierManagerReferral;
+
+    public WalnutCountManager walnutCountManagerReferral;
 
     private void Start()
     {
@@ -64,6 +68,7 @@ public class PlayerStats : MonoBehaviour
                 StatsManager.Instance.globalTimer = 180;
                 StatsManager.Instance.globalScore = 0;
                 StatsManager.Instance.globalMultiplier = 1;
+                StatsManager.Instance.globalWalnutCount = 0;
             }
 
         }
@@ -83,6 +88,11 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
+        if (this.checkIfRed)
+        {
+            playerRenderer.material.color = originalColor;
+            this.checkIfRed = false;
+        }
         // game over conditions
         if ((this.health <= 0) || (StatsManager.Instance.globalTimer  <= 0))
         {
@@ -90,7 +100,7 @@ public class PlayerStats : MonoBehaviour
         }
 
         // If player is camo, must lower Camo time
-            if (camoCheck.isCurrentlyCamo)
+        if (camoCheck.isCurrentlyCamo)
         {
             this.camoTime -= Time.deltaTime;
             StatsManager.Instance.globalCamoTime -= Time.deltaTime;
@@ -456,7 +466,8 @@ public class PlayerStats : MonoBehaviour
         (this.isDead != StatsManager.Instance.globalIsDead) ||
         (scoreTimeManagerReferral.timerValue != StatsManager.Instance.globalTimer) ||
         (scoreManagerReferral.scoreValue != StatsManager.Instance.globalScore) ||
-        (multiplierManagerReferral.multValue != StatsManager.Instance.globalMultiplier))
+        (multiplierManagerReferral.multValue != StatsManager.Instance.globalMultiplier) ||
+        (walnutCountManagerReferral.walnutValue != StatsManager.Instance.globalWalnutCount))
         {
             ChangeOnSceneSwitch();
         }
@@ -473,5 +484,6 @@ public class PlayerStats : MonoBehaviour
         scoreTimeManagerReferral.timerValue = StatsManager.Instance.globalTimer;
         scoreManagerReferral.scoreValue = StatsManager.Instance.globalScore;
         multiplierManagerReferral.multValue = StatsManager.Instance.globalMultiplier;
+        walnutCountManagerReferral.walnutValue = StatsManager.Instance.globalWalnutCount;
     }
 }

@@ -22,6 +22,7 @@ public class GolemMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(playerTransform.position);
         // If player is camo, monsters should just patrol
         if (playerCondition.isCurrentlyCamo)
         {
@@ -37,7 +38,7 @@ public class GolemMovement : MonoBehaviour
             {
                 strikeTimer = 0f;
             }
-            if (strikeTimer > 5f && strikeTimer <5.1f)
+            if (strikeTimer > 5f && strikeTimer < 5.1f)
             {
                 gStats.golemSpeed = 0;
                 gStrike.setCoroutine = true;
@@ -50,6 +51,9 @@ public class GolemMovement : MonoBehaviour
         // If player comes close to a monster, start chase
         else if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
         {
+            Debug.Log("started chasing");
+            Debug.Log(transform.position);
+            Debug.Log(playerTransform.position);
             isChasing = true;
             //strikeTimer += Time.deltaTime;
         }

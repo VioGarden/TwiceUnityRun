@@ -21,6 +21,8 @@ public class GolemStats : MonoBehaviour
     public float damageDuration = 0.1f;
     private Color originalColor;
 
+    public int golemVariant;
+
     private void Awake()
     {
         healthBar = GetComponentInChildren<floatingHealthBar>();
@@ -28,7 +30,14 @@ public class GolemStats : MonoBehaviour
 
     void Start()
     {
-        InitVariablesGolem();
+        if (golemVariant == 1)
+        {
+            InitVariablesGolem();
+        }
+        else
+        {
+            InitVariablesGolem();
+        }
         originalColor = golemRenderer.material.color;
     }
 
@@ -128,12 +137,25 @@ public class GolemStats : MonoBehaviour
         this.golemMaxHealth = 1000;
         int randomAttackDamageGolem = Random.Range(5, 40);
         this.golemAttackDamage = randomAttackDamageGolem;
-        int randomLodgeDamageGolem = Random.Range(10, 50);
+        int randomLodgeDamageGolem = Random.Range(10, 15);
         this.golemLodgeDamage = randomLodgeDamageGolem;
-        int randomSpeedGolem = Random.Range(5, 10);
+        int randomSpeedGolem = Random.Range(5, 20);
         this.golemSpeed = randomSpeedGolem;
         healthBar.UpdateHealthBar(1000, 1000);
     }
+
+    //public void InitVariablesGolem2()
+    //{
+    //    this.golemHealth = 1000;
+    //    this.golemMaxHealth = 1000;
+    //    int randomAttackDamageGolem = Random.Range(5, 40);
+    //    this.golemAttackDamage = randomAttackDamageGolem;
+    //    int randomLodgeDamageGolem = Random.Range(10, 50);
+    //    this.golemLodgeDamage = randomLodgeDamageGolem;
+    //    int randomSpeedGolem = Random.Range(20, 50);
+    //    this.golemSpeed = randomSpeedGolem;
+    //    healthBar.UpdateHealthBar(1000, 1000);
+    //}
 
     private void Die()
     {
