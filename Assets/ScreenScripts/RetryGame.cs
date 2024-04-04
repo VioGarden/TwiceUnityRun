@@ -31,7 +31,7 @@ public class RetryGame : MonoBehaviour
         StatsManager.Instance.globalScore = 0;
         StatsManager.Instance.globalMultiplier = 1;
         StatsManager.Instance.globalWalnutCount = 0;
-        SceneManager.LoadScene("MainMap");
+        //SceneManager.LoadScene("MainMap");
 
         DoorManager.Instance.doorStates[0] = true;
         DoorManager.Instance.doorStates[1] = true;
