@@ -17,19 +17,32 @@ public class ScoreTimerManager : MonoBehaviour
         UpdateTimerDisplay();
     }
 
+    //void Update()
+    //{
+    //    if (timerRunning)
+    //    {
+    //        timerValue -= Time.deltaTime;
+    //        if (timerValue <= 0)
+    //        {
+    //            timerValue = 0;
+    //            timerRunning = false;
+    //            Debug.Log("Time's up!");
+    //        }
+    //        UpdateTimerDisplay();
+    //    }
+    //}
+
     void Update()
     {
-        if (timerRunning)
+        //timerValue -= Time.deltaTime;
+        timerValue = StatsManager.Instance.globalTimer;
+        if (timerValue <= 0)
         {
-            timerValue -= Time.deltaTime;
-            if (timerValue <= 0)
-            {
-                timerValue = 0;
-                timerRunning = false;
-                Debug.Log("Time's up!");
-            }
-            UpdateTimerDisplay();
+            timerValue = 0;
+            timerRunning = false;
+            Debug.Log("Time's up!");
         }
+        UpdateTimerDisplay();
     }
 
     private void UpdateTimerDisplay()
