@@ -204,7 +204,15 @@ public class YourScore : MonoBehaviour
         float finalScoreBasePenalty = finalBaseScoreAdditionAndSubtraction - timerPenaltyValue;
         float finalScorePercentagePenalty = finalScoreBasePenalty * 0.8f;
         float finalScorePlusMultiplier = finalScorePercentagePenalty * baseMultiplierValue;
-        float finalScoreCountingWalnuts = finalScorePlusMultiplier * walnutsCollectedValue * 9.9f;
+        float finalScoreCountingWalnuts;
+        if (walnutsCollectedValue == 0)
+        {
+            finalScoreCountingWalnuts = finalScorePlusMultiplier;
+        }
+        else
+        {
+            finalScoreCountingWalnuts = finalScorePlusMultiplier * walnutsCollectedValue * 9.9f;
+        }
 
         string finalTotalScoreString = "<color=#FFD700>" + finalScoreCountingWalnuts.ToString("0.00") + "</color>";
         finalScoreValue.text = finalTotalScoreString;

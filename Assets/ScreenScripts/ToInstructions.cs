@@ -19,10 +19,10 @@ public class ToInstructions : MonoBehaviour
 
     public void LoadInstructions()
     {
-        StatsManager.Instance.globalCamoTime = 10.00f;
-        StatsManager.Instance.globalHealth = 30;
+        StatsManager.Instance.globalCamoTime = 20.00f;
+        StatsManager.Instance.globalHealth = 300;
         StatsManager.Instance.globalSpeed = 40;
-        StatsManager.Instance.globalAttackDamage = 1;
+        StatsManager.Instance.globalAttackDamage = 10;
         StatsManager.Instance.globalKnockBack = 1f;
         StatsManager.Instance.globalIsDead = false;
         StatsManager.Instance.gameHasStarted = true;
